@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
+ 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -16,51 +16,413 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-	display: block;
+    display: block;
 }
 body {
-	line-height: 1;
+    line-height: 1;
 }
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
 blockquote, q {
-	quotes: none;
+    quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+    content: '';
+    content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
-
+ 
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
 }
-
+ 
 html, body {
     height: 100%;
     font-family: 'Titillium Web', sans-serif;
 }
-
+ 
 h1, h2, h3, h4, h5 {
     font-family: 'Bangers', cursive;
     letter-spacing: 1px;
     margin-bottom: 15px;
 }
-
+ 
 /* Copy and paste your work from yesterday here and start to refactor into flexbox */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol,
+ul {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+ 
+/* Set every element's box-sizing to border-box */
+* {
+    box-sizing: border-box;
+}
+ 
+html,
+body {
+    height: 100%;
+    /* font-family: 'Titillium Web', sans-serif; */
+    font-family: "Open Sans", sans-serif;
+}
+ 
+h1,
+h2,
+h3,
+h4,
+h5 {
+    /* font-family: 'Bangers', cursive; */
+    font-family: "Permanent Marker", cursive;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+ 
+/* Your code starts here! */
+#wrapper {
+    width: 1024px;
+    margin: 0 auto;
+}
+ 
+header {
+    width: 100%;
+    padding: 10px 20px 60px 20px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    padding-top: 60px;
+}
+ 
+header nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(#eee, #ccc);
+    width: 100%;
+    z-index: 1;
+    border-bottom: 1px solid #ccc;
+    transition-property: padding;
+    transition-duration: 0.5s;
+    padding: 0px 0;
+}
+ 
+nav:hover {
+    transition-property: padding;
+    transition-duration: 0.5s;
+    padding: 10px 0;
+}
+ 
+header nav a {
+    display: flexbox;
+    color: #888;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-weight: 400;
+    padding: 30px;
+}
+ 
+nav a:hover {
+    transition-property: color, font-weight;
+    transition-duration: 0.5s, 0.5s;
+    color: #fff;
+    font-weight: bold;
+}
+ 
+.logo {
+    display: flexbox;
+    background: url("https://i.imgur.com/RoKbjZH.png");
+    width: 183px;
+    height: 36px;
+    margin-left: 100px;
+    vertical-align: middle;
+}
+ 
+header .iov {
+    display: flexbox;
+    flex-direction: column;
+    justify-content: flex-start;
+    float: left;
+    font-size: 75px;
+    text-align: center;
+    margin-top: 50px;
+    margin-right: 60px;
+}
+ 
+.header-image {
+    display: flexbox;
+    background: url("https://i.imgur.com/Hw8avII.png");
+    flex-direction: row;
+    width: 379px;
+    height: 379px;
+    margin-left: 60px;
+    margin-top: 50px;
+}
+ 
+.button {
+    display: block;
+    width: 180px;
+    height: 30px;
+    font-size: 20px;
+    border: 1px solid black;
+    padding: 5px 20px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+ 
+.button:hover {
+    cursor: pointer;
+}
+ 
+.top-section {
+    padding: 40px 0;
+    font-size: 18px;
+}
+ 
+.top-section div {
+    display: flexbox;
+    width: 500px;
+    margin: 0 auto;
+    margin-right: 10px;
+    justify-content: flex-start;
+    float: left;
+}
+ 
+.top-section div:last-child {
+    margin-right: 0;
+    Display: flexbox;
+    justify-content: flex-start;
+ 
+}
+ 
+.middle-section img {
+    width: 100%;
+}
+ 
+.middle-img {
+    background: url("https://i.imgur.com/FGkeFT2.jpg");
+    height: 182px;
+    width: 100%;
+}
+ 
+.bottom-section {
+    padding: 40px 0;
+    font-size: 18px;
+    border-bottom: 1px solid black;
+}
+ 
+.bottom-section div {
+    display: flexbox;
+    align-self: flex-start;
+    float: left;
+    width: 330px;
+    margin: 0 auto;
+    margin-right: 10px;
+}
+ 
+.bottom-section div:last-child {
+    margin-right: 0;
+    display: flexbox;
+    align-self: flex-start;
+}
+ 
+.contact {
+    padding: 40px 0;
+}
+ 
+footer {
+    padding: 40px 0;
+    height: 150px;
+}
+ 
+footer h6 {
+    text-align: center;
+}
+ 
+nav.container {
+    display:flexbox;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-flow: row;
+ 
+}
+ 
+body {
+    margin: 30px
+}
+.logo {
+    display: flexbox;
+    justify-content: right;
+    float: right;
+    flex-wrap: wrap;
+}
+.services-header-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+#intro-1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%; 
+    text-decoration-style: solid;
+    line-height: 30px;
+    font-size:25px;
+    font-style: oblique;
+}
+.intro-1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%; 
+    text-decoration-style: solid;
+    line-height: 30px;
+    font-size:25px;
+    font-style: oblique;
+}
+.top {
+    display: flexbox;
+    border: 2px solid black;
+    margin: 20px;
+    width: 40%;
+    flex-direction: row;
+}
+ 
+.top-right {
+    display: flexbox;
+    border: 2px solid black;
+    margin: 20px;
+    width: 40%;
+    flex-direction: row
+}
+.section1 {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+}
+ 
+.middle-left {
+    display: flexbox;
+    border: 2px solid black;
+    margin: 20px;
+    width: 40%;
+    flex-direction: row
+}
+ 
+.middle-right {
+    display: flexbox;
+    border: 2px solid black;
+    margin: 20px;
+    width: 40%;
+    flex-direction: row
+}
+.middle {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+}
+ 
+.bottom-right {
+    display: flexbox;
+    border: 2px solid black;
+    margin: 20px;
+    width: 40%;
+    flex-direction: row
+}
+.bottom-left {
+    display: flexbox;
+    border: 2px solid black;
+    margin: 20px;
+    width: 40%;
+    flex-direction: row
+}
+.bottom {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80%;
+}
+ 
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+  }
+ 
+  .bottom-section1 {
+    display: ;
+    border: 2px;
+    margin: 20px;
+    width: 40%;
+    flex-direction: column;
+  }
+  .bullet-section {
+    display: flexbox;
+    border: 2px;
+    margin: 20px;
+    width: 40%;
+    flex-direction: 
+  }
+  .outro {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto
+    width: 50%;
+    
+  }
+ 
+  footer {
+      text-align: center;
+  }
+ 
